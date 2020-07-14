@@ -5,7 +5,11 @@
     <title>농구게임 만들기</title>
     <link rel="stylesheet" href="css/styles.css"/>
 
-    <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scripts2.js"></script>
 </head>
 <body>
 <div class = "div-scoreboard">
@@ -22,13 +26,13 @@
             <div class = "div-score-name">사용자</div>
             <div id = "user-score" class = "div-score-number">0</div>
         </div>
-        <div id = "text">컴퓨터부터 시작합니다!</div>
+        <div id = "text"></div>
     </div>
 </div>
 <div class = "div-control-panel">
     <div id="div-computer" class = "div-panel">
         <div class = "div-control-name">컴퓨터</div>
-        <button class = "btn-computer" onclick="onComputerShoot()">슛하기</button>
+        <button class = "btn-computer" onclick="onComputerShoot()" disabled>슛하기</button>
     </div>
 
     <div id = "div-user" class = "div-panel">
