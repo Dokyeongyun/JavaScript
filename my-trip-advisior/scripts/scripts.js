@@ -58,7 +58,6 @@ function search(from, to) {
         from: from,
         to: to
     }, function(r) {
-        console.log(r);
         var $list = $('#list-panel');
 
         for(var i=0; i<r.length; i++){

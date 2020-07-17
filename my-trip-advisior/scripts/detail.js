@@ -1,4 +1,5 @@
 var map;
+var check;
 
 $(function() {
     var id = parseId(window.location.search);
@@ -30,6 +31,35 @@ function getDetail(id) {
         Galleria.run('#detail-images');
 
         showMarker(r.position.x, r.position.y);
+
+        $('.btn-register').click(function() {
+            var myTrips = Cookies.getJSON('MYTRIPS');
+
+            if(!myTrips)
+                myTrips = [];
+
+            for(var i=0; i<myTrips.length; i++){
+                if(myTrips[i].id===id){
+                    alert('이미 추가한 여행지입니다.');
+                    check = true;
+                }
+            }
+
+            if(!check){
+              myTrips.push({
+                  id: id,
+                  name: r.name,
+                 cityName: r.cityName,
+                  x: r.position.x,
+                   y: r.position.y
+               });
+
+               Cookies.set('MYTRIPS', myTrips);
+
+               alert('여행지가 등록되었습니다!');
+            }
+
+        });
     });
 }
 
